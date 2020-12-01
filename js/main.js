@@ -7,3 +7,10 @@ fetch(url).then(function(response){
 }).then(function(data){
     images = data.photos.photo;
 })
+
+function MemoryCard(){
+
+};
+
+
+
