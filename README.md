@@ -1,4 +1,4 @@
-#Kunskapkontroll 3 Grupp: Robo Astronaut - Memory game.
+Kunskapkontroll 3 Grupp: Robo Astronaut - Memory game.
 
 Ett memoryspel byggt från Flickrs Api.
 
@@ -9,7 +9,7 @@ Vilka som deltog och vad för uppgift vilka hade:
   * UI och Poängsystem
 
 * Filip Sundholm: 
-  * Generera kort,
+  * Generera kort
   * Kodansvarig
 
 * Tommy Danielsson: 
