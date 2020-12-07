@@ -50,8 +50,8 @@ function imageGeneration(images) {
 
 // Kollar om img.src matchar varandra
 function isItMatching(cards) {
-  let firstCard = cards[0];
-  let secondCard = cards[1];
+  let firstCard = cards[0].target.src;
+  let secondCard = cards[1].target.src;
 
   return firstCard === secondCard ? true : false;
 }
@@ -62,20 +62,27 @@ function scoreCounter(counter) {
 }
 
 // För var index, hitta div och toggle dess childnode (img).
-function flipBackCards(index) {
-  index.forEach((i) => {
-    let div = document.getElementById(i);
-    div.childNodes.item("img").classList.toggle("hide");
+function flipBackCards(card) {
+  card.forEach((c) => {
+    c.target.classList.toggle("hide");
+  });
+}
+
+// gör så att matchande kort inte går att klicka på
+function disableMatch(card) {
+  card.forEach((c) => {
+    c.target.classList.toggle("disabled");
   });
 }
 
 let matches = 0;
 // Om matching är True, öka matches, annars vänd tillbaka korten efter 1.5 sekunder. När matches når 12, alerta och ladda om
-function gamePlay(index, img, clicks) {
+function gamePlay(img, clicks) {
   if (isItMatching(img)) {
     matches++;
+    disableMatch(img);
   } else {
-    setTimeout(() => flipBackCards(index), 1500);
+    setTimeout(() => flipBackCards(img), 1500);
   }
   if (matches === 12) {
     alert(
@@ -89,19 +96,16 @@ function gamePlay(index, img, clicks) {
 Game.prototype.match = function (className) {
   const card = document.querySelectorAll(className);
   let clicks = 0;
-  let id = [];
   let cards = [];
 
   card.forEach((c) => {
     // Lägger till img src & div id till array vid varje klickning, när array innehåller två, skicka vidare och rensa array
     c.addEventListener("click", (e) => {
       e.target.classList.toggle("hide");
-      id.push(c.id);
-      cards.push(e.target.src);
+      cards.push(e);
 
-      if (id.length === 2) {
-        gamePlay(id, cards, clicks);
-        id = [];
+      if (cards.length === 2) {
+        gamePlay(cards, clicks);
         cards = [];
         clicks++;
         scoreCounter(clicks);
