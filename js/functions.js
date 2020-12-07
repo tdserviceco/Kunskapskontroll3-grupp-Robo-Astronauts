@@ -102,7 +102,9 @@ Game.prototype.match = function (className) {
     // Lägger till img src & div id till array vid varje klickning, när array innehåller två, skicka vidare och rensa array
     c.addEventListener("click", (e) => {
       e.target.classList.toggle("hide");
-      cards.push(e);
+      if (e.target.src != undefined) {
+        cards.push(e);
+      }
 
       if (cards.length === 2) {
         gamePlay(cards, clicks);
