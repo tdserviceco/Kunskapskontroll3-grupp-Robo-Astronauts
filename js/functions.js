@@ -15,7 +15,8 @@ function Game(apiKey) {
 }
 
 async function getData(apiKey) {
-  const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=dogs&tags=dogs&media=photos&per_page=12&page=1&format=json&nojsoncallback=1`;
+  let randomPage = Math.floor(Math.random() * 100);
+  const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&is_commons=true&in_gallery=true&content_type=1&safe_search=1&text=dogs&tags=dogs&media=photos&per_page=12&page=${randomPage}&format=json&nojsoncallback=1`;
   let response = await fetch(url);
   return response.json()
 }
