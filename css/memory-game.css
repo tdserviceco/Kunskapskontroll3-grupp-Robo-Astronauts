@@ -1,4 +1,3 @@
-
 .main-container {
   background-color: #252e3b;
   height: 100vh;
@@ -41,7 +40,7 @@
 }
 
 .card {
-  background-color: #383545;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 150px;
   height: 150px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9);
