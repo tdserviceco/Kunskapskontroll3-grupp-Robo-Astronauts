@@ -51,7 +51,7 @@ function imageGeneration(images) {
 
 /**
  * Blandar array index i olika ordning.
- * @param Ideé från https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+ * @param shuffle(a) från https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
  * 
  */
 
