@@ -13,9 +13,8 @@ Vilka som deltog och vad för uppgift vilka hade:
   * Flipkort effekt
 
 * Filip Sundholm: 
-  * Tema för spelet
-  * Kodansvarig
-  * Popup rutan (välj tema)
+  * Display av kort (via api hjälp)
+  * API hämtning
 
 * Tommy Danielsson: 
   * Click Funktion
